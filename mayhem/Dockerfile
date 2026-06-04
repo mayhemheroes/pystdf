@@ -3,6 +3,7 @@ FROM fuzzers/atheris:2.0.7-python3.9
 
 ADD . /src
 WORKDIR /src
-RUN python3 -m pip install . numpy pandas
+RUN python3 -m pip install --upgrade pip && \
+    python3 -m pip install . numpy pandas
 
 CMD ["/src/mayhem/fuzz_parser.py"]
