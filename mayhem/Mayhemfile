@@ -1,0 +1,9 @@
+project: pystdf
+target: parser-fuzz
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/parser-fuzz/testsuite
+cmds:
+  - cmd: /mayhem/fuzz-parser
+    libfuzzer: true
+    timeout: 12
